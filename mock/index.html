@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Unified Seller presentation mock" />
+    <title>Unified Seller | Presentation Mock</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast" role="status"></div>
+
+    <section id="loginScreen" class="loginScreen">
+      <div class="loginVisual">
+        <div class="loginBrand"><span class="brandMark">U</span><span>Unified Seller</span></div>
+        <div class="loginMessage">
+          <span class="eyebrow light">MULTI-MARKETPLACE OPERATIONS</span>
+          <h1>One command center for every channel you sell on.</h1>
+          <p>Bring orders, inventory, fulfillment, and marketplace health into one calm operating view.</p>
+        </div>
+        <div class="loginProof"><span class="proofAvatar">AM</span><span>Built for high-volume seller teams</span><span class="proofDot"></span></div>
+      </div>
+      <div class="loginPanel">
+        <div class="loginPanelTop"><span class="eyebrow">SELLER WORKSPACE</span><span class="demoBadge">PRESENTATION MODE</span></div>
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to your seller operations workspace.</p>
+        <form id="loginForm" class="loginForm">
+          <label>Email address<input id="emailInput" type="email" value="demo@unifiedseller.com" autocomplete="username" required /></label>
+          <label>Password<input id="passwordInput" type="password" value="demo123" autocomplete="current-password" required /></label>
+          <button class="primary fullWidth" type="submit">Enter workspace <span>→</span></button>
+        </form>
+        <div class="demoHint"><span class="hintIcon">✦</span><div><strong>Demo login</strong><span>demo@unifiedseller.com / demo123</span></div></div>
+        <div class="loginFoot">This is a presentation mock. No real account or marketplace data is used.</div>
+      </div>
+    </section>
+
+    <main id="appShell" class="appShell hidden">
+      <aside class="sidebar">
+        <div class="brand"><span class="brandMark">U</span><span>Unified Seller</span></div>
+        <div class="workspaceCard"><span class="eyebrow">WORKSPACE</span><strong>Acme Home Goods</strong><span class="muted">5 seats · Growth plan</span><span class="workspaceHealth"><i></i> All systems healthy</span></div>
+        <nav class="mainNav" aria-label="Main navigation">
+          <button class="navItem active" data-view="overview"><span>⌂</span> Overview</button>
+          <button class="navItem" data-view="orders"><span>▤</span> Orders <b class="navCount">12</b></button>
+          <button class="navItem" data-view="inventory"><span>◫</span> Inventory</button>
+          <button class="navItem" data-view="catalog"><span>▦</span> Catalog</button>
+          <button class="navItem" data-view="connections"><span>◎</span> Connections</button>
+          <button class="navItem" data-view="automations"><span>✦</span> Automations</button>
+          <button class="navItem" data-view="reports"><span>◒</span> Reports</button>
+        </nav>
+        <div class="sidebarBottom"><button class="navItem" data-view="settings"><span>⚙</span> Settings</button><div class="sidebarUser"><div class="userAvatar">OW</div><div><strong>Olivia West</strong><span>Owner</span></div><button id="logoutButton" class="iconButton" title="Sign out">↪</button></div></div>
+      </aside>
+
+      <section class="mainContent">
+        <header class="topbar">
+          <div class="mobileBrand"><span class="brandMark">U</span><strong>Unified Seller</strong></div>
+          <div class="breadcrumb"><span>Acme Home Goods</span><b>/</b><strong id="pageLabel">Overview</strong></div>
+          <div class="topActions"><div class="searchBox"><span>⌕</span><input id="globalSearch" placeholder="Search orders, SKUs..." /></div><button id="syncButton" class="secondaryButton"><span>↻</span> Sync channels</button><button class="notificationButton" title="Notifications">♢<i></i></button><button id="profileButton" class="profileButton">OW</button></div>
+        </header>
+
+        <div class="viewStack">
+          <section class="view activeView" data-section="overview">
+            <div class="pageIntro"><div><span class="eyebrow">TUESDAY, 24 NOVEMBER 2026</span><h1>Good morning, Olivia.</h1><p class="muted">Here is what needs your attention across every selling channel.</p></div><div class="introActions"><span class="lastSync"><i></i> Last synced 4 min ago</span><button id="addMarketplaceButton" class="primary">+ Add marketplace</button></div></div>
+            <div class="heroBanner"><div><span class="eyebrow warm">CONTROL CENTER</span><h2>Keep every channel moving.</h2><p>12 orders need attention before the next pickup window.</p><div class="heroMeta"><span><b>3</b> marketplaces connected</span><span><b>98.4%</b> sync health</span><span><b>5</b> team members online</span></div></div><div class="heroArt"><div class="orbit orbitOne"></div><div class="orbit orbitTwo"></div><div class="heroCube">U</div><span class="spark sparkOne">✦</span><span class="spark sparkTwo">·</span></div></div>
+            <div id="overviewMetrics" class="metricGrid"></div>
+            <div class="sectionGrid twoColumns"><div class="panel"><div class="panelHeader"><div><span class="eyebrow">WORK QUEUE</span><h3>Orders needing attention</h3></div><button class="textButton" data-view-link="orders">View all ↗</button></div><div id="attentionOrders" class="orderMiniList"></div></div><div class="panel"><div class="panelHeader"><div><span class="eyebrow">CHANNEL HEALTH</span><h3>Marketplace connections</h3></div><button class="textButton" id="overviewAddButton">+ Add</button></div><div id="overviewConnections" class="connectionList"></div></div></div>
+            <div class="sectionGrid twoColumns"><div class="panel"><div class="panelHeader"><div><span class="eyebrow">STOCK CONTROL</span><h3>Inventory health</h3></div><button class="textButton" data-view-link="inventory">View inventory ↗</button></div><div id="overviewInventory" class="stockList"></div></div><div class="panel darkPanel"><div class="panelHeader"><div><span class="eyebrow light">PLATFORM HEALTH</span><h3>Everything is operating normally</h3></div><span class="tinyBadge green">LIVE</span></div><div class="healthRows"><div><span class="healthIcon">✓</span><b>API services</b><span>Ready</span></div><div><span class="healthIcon">↔</span><b>Connector workers</b><span>12 jobs clear</span></div><div><span class="healthIcon">◌</span><b>Observability</b><span>Grafana linked</span></div></div><button class="darkLink" data-view-link="reports">Open platform reports →</button></div></div>
+          </section>
+
+          <section class="view" data-section="orders"><div class="pageIntro compact"><div><span class="eyebrow">ORDER OPERATIONS</span><h1>Orders</h1><p class="muted">Review, acknowledge, and prepare every order from one queue.</p></div><button class="primary" id="ordersSyncButton">↻ Sync orders</button></div><div class="filterBar"><div class="filterTabs"><button class="filterTab active" data-filter="all">All <b>24</b></button><button class="filterTab" data-filter="pending">Pending <b>12</b></button><button class="filterTab" data-filter="acknowledged">Acknowledged <b>8</b></button><button class="filterTab" data-filter="shipped">Shipped <b>4</b></button></div><select id="channelFilter"><option value="all">All channels</option><option value="amazon">Amazon</option><option value="flipkart">Flipkart</option><option value="walmart">Walmart</option></select></div><div class="panel tablePanel"><div class="tableWrap"><table><thead><tr><th>Order</th><th>Channel</th><th>Items</th><th>Amount</th><th>Status</th><th>Placed</th><th></th></tr></thead><tbody id="ordersTable"></tbody></table></div></div></section>
+
+          <section class="view" data-section="inventory"><div class="pageIntro compact"><div><span class="eyebrow">STOCK CONTROL</span><h1>Inventory</h1><p class="muted">Central stock view across warehouses and connected marketplaces.</p></div><button class="primary" id="restockButton">+ Add stock</button></div><div id="inventoryMetrics" class="metricGrid"></div><div class="panel tablePanel"><div class="tableWrap"><table><thead><tr><th>Product / SKU</th><th>Warehouse</th><th>On hand</th><th>Reserved</th><th>Available</th><th>Channel status</th></tr></thead><tbody id="inventoryTable"></tbody></table></div></div></section>
+
+          <section class="view" data-section="catalog"><div class="pageIntro compact"><div><span class="eyebrow">PRODUCT OPERATIONS</span><h1>Catalog</h1><p class="muted">Your canonical product catalog and marketplace listing mappings.</p></div><button class="primary" id="newProductButton">+ New product</button></div><div id="catalogGrid" class="catalogGrid"></div></section>
+
+          <section class="view" data-section="connections"><div class="pageIntro compact"><div><span class="eyebrow">CHANNEL CONTROL</span><h1>Connections</h1><p class="muted">Keep every marketplace account healthy and in sync.</p></div><button class="primary" id="connectionsAddButton">+ Add marketplace</button></div><div id="connectionsGrid" class="connectionCards"></div></section>
+
+          <section class="view" data-section="automations"><div class="pageIntro compact"><div><span class="eyebrow">OPERATIONS AUTOMATION</span><h1>Automations</h1><p class="muted">Turn operational events into useful notifications for your team.</p></div><button class="primary" id="newRuleButton">+ New automation</button></div><div class="sectionGrid twoColumns"><div class="panel"><div class="panelHeader"><div><span class="eyebrow">ACTIVE RULES</span><h3>Rules running for Acme</h3></div><span class="tinyBadge green">3 ACTIVE</span></div><div id="rulesList" class="rulesList"></div></div><div class="panel"><div class="panelHeader"><div><span class="eyebrow">DELIVERY LOG</span><h3>Recent notifications</h3></div><span class="tinyBadge">TODAY</span></div><div id="deliveryList" class="deliveryList"></div></div></div></section>
+
+          <section class="view" data-section="reports"><div class="pageIntro compact"><div><span class="eyebrow">BUSINESS VISIBILITY</span><h1>Reports</h1><p class="muted">A quick read on sales activity, stock, and operational performance.</p></div><button class="secondaryButton" id="exportButton">Download CSV ↗</button></div><div id="reportMetrics" class="metricGrid"></div><div class="sectionGrid twoColumns"><div class="panel chartPanel"><div class="panelHeader"><div><span class="eyebrow">ORDER VOLUME</span><h3>Orders across channels</h3></div><span class="muted small">Last 7 days</span></div><div class="barChart" id="barChart"></div><div class="chartLegend"><span><i class="legendDot amazonDot"></i>Amazon</span><span><i class="legendDot flipkartDot"></i>Flipkart</span><span><i class="legendDot walmartDot"></i>Walmart</span></div></div><div class="panel"><div class="panelHeader"><div><span class="eyebrow">CHANNEL MIX</span><h3>Where orders come from</h3></div></div><div id="channelMix" class="channelMix"></div></div></div></section>
+
+          <section class="view" data-section="settings"><div class="pageIntro compact"><div><span class="eyebrow">WORKSPACE SETTINGS</span><h1>Settings</h1><p class="muted">Manage workspace access, preferences, and integration defaults.</p></div></div><div class="settingsGrid"><div class="panel settingCard"><span class="settingIcon">⌘</span><h3>Team access</h3><p class="muted">5 of 10 seats are in use. Roles keep operations safe at scale.</p><button class="textButton">Manage team →</button></div><div class="panel settingCard"><span class="settingIcon">◎</span><h3>Notifications</h3><p class="muted">Telegram and email destinations are ready for your rules.</p><button class="textButton" data-view-link="automations">Open automations →</button></div><div class="panel settingCard"><span class="settingIcon">◇</span><h3>API access</h3><p class="muted">Production credentials are encrypted and rotated through the platform.</p><button class="textButton">View API settings →</button></div></div></section>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="marketplaceModal" class="modal"><form method="dialog" class="modalCard" id="marketplaceForm"><button class="modalClose" value="cancel" aria-label="Close">×</button><span class="eyebrow">NEW CONNECTION</span><h2>Add a marketplace</h2><p class="muted">Choose a channel to connect to your unified workspace.</p><div class="marketplaceChoices"><button type="button" class="marketplaceChoice" data-provider="eBay"><span class="choiceIcon ebay">e</span><span><strong>eBay</strong><small>Coming next</small></span><span class="choiceArrow">→</span></button><button type="button" class="marketplaceChoice" data-provider="Walmart"><span class="choiceIcon walmart">w</span><span><strong>Walmart</strong><small>Ready in demo</small></span><span class="choiceArrow">→</span></button><button type="button" class="marketplaceChoice" data-provider="Flipkart"><span class="choiceIcon flipkart">f</span><span><strong>Flipkart</strong><small>Ready in demo</small></span><span class="choiceArrow">→</span></button></div></form></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
