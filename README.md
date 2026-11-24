@@ -20,3 +20,5 @@ Then open [http://localhost:4173](http://localhost:4173).
 ## GitHub Pages
 
 Every push to `main` deploys the `mock/` folder through GitHub Actions.
+
+Open the live presentation at [shubham-kr23.github.io/unified-seller-portal-mock](https://shubham-kr23.github.io/unified-seller-portal-mock/).
